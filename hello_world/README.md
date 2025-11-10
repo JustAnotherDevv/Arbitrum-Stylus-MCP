@@ -1,0 +1,74 @@
+## hello_world
+
+This is a sample project generated with [nsv](https://github.com/wakeuplabs-io/noir-stylus-verifier).
+
+### Project Structure
+
+* 🧮 The Noir circuit lives at `src/main.nr`.
+* 📜 Example JavaScript scripts can be found in the `scripts` directory.
+* ⚙️ Smart contracts are located in the `contracts` directory — generated via `nsv generate`.
+
+> ⚠️ If you update the circuit, remember to regenerate the contracts using `nsv generate`.
+
+### Deploying the Contract
+
+Use the following commands to deploy the verifier contract:
+
+#### 1. Check Stylus Compatibility
+
+```bash
+nsv check
+```
+
+#### 2. Deploy the Verifier
+
+```bash
+nsv deploy \
+  --private-key "0x..." \
+  --rpc-url https://<your-network>.arbitrum.io/rpc \
+  --verifier-address <0x...>
+```
+
+* Replace `--private-key` and `--rpc-url` with the appropriate values for your network.
+* The `--verifier-address` is optional. If omitted, the default will be used.
+* You may also deploy your own global verifier by cloning the [Noir Stylus Verifier repo](https://github.com/wakeuplabs-io/noir-stylus-verifier).
+
+### Proving and Verifying
+
+#### Generate a Proof
+
+```bash
+nsv prove
+```
+
+This uses the configuration in `Prover.toml`.
+
+#### Verify the Proof
+
+* Locally:
+
+  ```bash
+  nsv verify
+  ```
+
+* On-chain:
+
+  ```bash
+  nsv verify \
+    --verifier-address <0x...> \
+    --rpc-url https://<your-network>.arbitrum.io/rpc
+  ```
+
+### Using JavaScript Scripts
+
+The scripts in the `scripts` folder demonstrate how to use the Noir JS package to interact with the verifier contracts.
+
+To run them:
+
+```bash
+# For a globally deployed verifier
+GLOBAL_VERIFIER_ADDRESS=0x... RPC_URL=... pnpm verify-global
+
+# To test with your circuit specific contract
+VERIFIER_ADDRESS=0x... RPC_URL=... pnpm verify
+```

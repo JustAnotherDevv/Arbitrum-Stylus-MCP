@@ -1,0 +1,13 @@
+root = '0x100f21ac2567c6855e6c874c50500195e02647da0f1393dae9b634eceb4eb839'
+path = [
+    '0x0',
+    '0xb63a53787021a4a962a452c2921b3663aff1ffd8d5510540f8e659e782956f1',
+]
+direction_selector = [false, false]
+secret = '0x2f475fae5c08686b3985c472f6641f67dcfa85a3f08660b77544d0903ef4aab1'
+priv_key = '0x27d3cc6406e9a819149611eb04df3d1170afc78971040291e98c88dd6ca09aa6'
+proposal_id = '0x01'
+voter_id = '0x2370339219c7b35fd62aab19c1110cbd91f8dba2b23178d8987da5fc061c5b23'
+nullifier = '0x0cb8e89a8e30139f7e6e2d2fd0d3fa783f19581730fe095a200b64a5a949a61d'
+option = "0"
+vote_strength = "5"
